@@ -9,3 +9,11 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+
+UserManagementExample.Repo.insert!(%UserManagementExample.Post{title: "MyPost", body: "My Content"})
+UserManagementExample.User.changeset(%UserManagementExample.User{}, %{name: "Demo User", email: "admin2@example.com", password: "password", password_confirmation: "password"})
+  |> UserManagementExample.Repo.insert!
+
+
+
